@@ -81,13 +81,13 @@ new Vue( {
 		},
 		
 		cartAdd: function ( id ) {
-			this.cart[id]--;
+			this.cart[id]++;
 			this.cart = this.cart.slice();
 		},
 		
 		cartMinus: function ( id ) {
 			if ( !this.cart[id] ) return ;
-			this.cart[id]++;
+			this.cart[id]--;
 			this.cart = this.cart.slice();
 		},
 		
