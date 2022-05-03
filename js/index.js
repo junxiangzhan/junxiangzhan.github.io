@@ -81,7 +81,7 @@ new Vue( {
 		},
 		
 		cartAdd: function ( id ) {
-			this.cart[id]++;
+			this.cart[id]--;
 			this.cart = this.cart.slice();
 		},
 		
@@ -145,7 +145,7 @@ new Vue( {
 						return '已幫您跳轉至「線上商店」頁面囉！';
 					},
 					
-					'聯絡資訊': function () {
+					'聯絡我們': function () {
 						$('#content, html').scrollTop( $('#contact').offset().top - $('#top').offset().top );
 						return '已幫您跳轉至「聯絡我們」頁面囉！';
 					},
