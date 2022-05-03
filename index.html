@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link href="images/001.png" rel="preload" as="image">
+    <link href="images/002.png" rel="preload" as="image">
+    <link href="images/003.png" rel="preload" as="image">
+	
+    <title>黑糖啵啵爆米花專賣店</title>
+    <link href="images/logo.svg" rel="shortcut icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- body code goes here --> 
+    <div id="app">
+		<nav id="navbar" class="navbar navbar-expand-lg navbar-dark flex-lg-column p-lg-5 shadow"> <a class="navbar-brand" href="#top"><img src="images/vertical.svg" width="200" class="d-none d-lg-block" alt=""><img src="images/brand.svg" width="250" alt="" class="d-lg-none"></a>
+		    <button class="navbar-toggler btn p-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-bars"></i> </button>
+		    <div class="collapse navbar-collapse flex-column justify-content-around" id="navbarSupportedContent1">
+		        <ul class="list-unstyled">
+					<li><a href="#home" class="link">首頁<i class="fa fa-angle-right"></i></a></li>
+					<li><a href="#about" class="link">關於我們<i class="fa fa-angle-right"></i></a></li>
+					<li><a href="#news" class="link">活動消息<i class="fa fa-angle-right"></i></a></li>
+					<li><a href="#rank" class="link">人氣排行<i class="fa fa-angle-right"></i></a></li>
+					<li><a href="#shop" class="link">線上商店<i class="fa fa-angle-right"></i></a></li>
+					<li><a href="#contact" class="link">聯絡我們<i class="fa fa-angle-right"></i></a></li>
+				</ul>
+				<div class="d-flex flex-column" style="gap: 1rem">
+					<form action="" @submit.prevent="alert('目前尚無網際網路，請稍後再試。')" class="input-group" style="border-bottom: 1px solid var(--white)">
+						<input type="text" name="" id="" class="form-control border-0" style="background: none" autocomplete="off" placeholder="搜尋…">
+						<button class="btn"><i class="fa fa-search text-white"></i></button>
+					</form>
+					<button class="btn d-flex align-items-center justify-content-between text-white" @click="$('#cart').modal()">
+						<div class="d-flex align-items-center" style="gap: .5rem">
+							<img src="images/bag.svg" height="40" alt="">
+							<div class="badge badge-pill badge-danger position-absolute" style="top: 85%; transform: translate(-20%, -50%)">{{ sum(cart) }}</div>
+							我的商品
+						</div>
+						NT$ {{ total(cart) }}
+					</button>
+				</div>
+	        </div>
+	    </nav>
+		<div id="content">
+			<div id="top"></div>
+			<section id="home">
+			    <div id="carouselExampleIndicators1" class="carousel slide carousel-fade" style="z-index: 1" data-ride="carousel" data-interval="4000">
+			        <div class="carousel-inner" role="listbox">
+			            <div class="carousel-item active">
+			            	<div class="img" style="background-image: url(images/001.png)">
+			            		<div class="label">
+			            			<div class="l">最懷念的古早香</div>
+									讓兒時滋味犒勞你的心靈
+			            		</div>
+			            	</div>
+			            </div>
+			            <div class="carousel-item">
+			            	<div class="img" style="background-image: url(images/002.png)">
+			            		<div class="label">
+			            			<div class="l">堅持不變的配方</div>
+									讓好味道不改變
+			            		</div>
+			            	</div>
+			            </div>
+			            <div class="carousel-item">
+			            	<div class="img" style="background-image: url(images/003.png)">
+			            		<div class="label">
+			            			<div class="l">讓我們一起</div>
+									將這個味道永恆傳承
+			            		</div>
+			            	</div>
+			            </div>
+		            </div>
+			    </div>
+				<div class="content">
+					<div class="h-100"><a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a></div>
+					<div class="center">
+						<img src="images/vertical_white.svg" alt="">
+						<div class="sqr"></div>
+						<div class="sqr"></div>
+					</div>
+				</div>
+            </section>
+			<section id="about">
+				<div class="block block-1 img">
+					<div class="label">
+						<div class="small" style="letter-spacing: .1em">BRAND STORY</div>
+						<div class="font-weight-bold" style="font-size: 4rem">堅持不變</div>
+						<h3>讓兒時的味道不被改變</h3>
+					</div>
+				</div>
+				<div class="block block-2 img">
+					<div class="label">
+						<div class="small" style="letter-spacing: .1em">BRAND STORY</div>
+						<h1>手工 5 步驟</h1>
+						<h2>拌悶搖炒爆 滋味更美好</h2>
+					</div>
+				</div>
+				<div class="block block-3 img">
+					<div class="label">
+						<div class="small" style="letter-spacing: .1em">BRAND STORY</div>
+						<img src="images/vertical_no.svg" width="200" alt="" class="my-2">
+						<h3>兒時記憶 唯一經典</h3>
+					</div>
+				</div>
+				<div class="block block-4 img">
+					<div class="label">
+						<div class="small" style="letter-spacing: .1em">BRAND STORY</div>
+						<h2>傳承最好古早香</h2>
+						<h4>成為大家心中的唯一口碑</h4>
+					</div>
+				</div>
+			</section>
+			<section id="news">
+				<div class="container">
+					<div class="text-center mb-4">
+						<div class="small">Activity News</div>
+						<h1>活動消息</h1>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-lg-5 d-flex my-3">
+							<div class="card w-100 border-0 shadow" style="background: linear-gradient(#fff5, #fff5), linear-gradient(#ffe9b6, #fbc67a, #f6cc5c)">
+								<ol class="list-group list-group-flush">
+									<li class="list-group-item d-flex align-items-center" style="gap: 1rem; background: none" v-for="i, j in news" @click="set('news_id', j)">
+										<div class="overflow-hidden" style="flex-basis: 100%">
+											<div class="d-flex align-items-center justify-content-between">
+												<div class="font-weight-bold overflow-hidden" style="white-space: nowrap; text-overflow: ellipsis; font-size: 1.2rem; color: var(--brown)">{{ i.title }}</div>
+												<div style="white-space: nowrap; color: var(--orange)"><i class="fa fa-calendar"></i> {{ i.date }}</div>
+											</div>
+											<hr class="my-2">
+											<div class="d-flex align-items-center justify-content-between">
+												<div class="overflow-hidden" style="white-space: nowrap; text-overflow: ellipsis; font-size: .9rem; color: #0009">{{ i.content }}</div>
+												<button class="btn btn-link" style="display: contents; white-space: nowrap">閱讀更多</button>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<div class="col-lg-7 my-3">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="font-weight-bold" style="font-size: 1.3333rem; color: var(--brown)">{{ news[news_id].title }}</div>
+								<div style="white-space: nowrap; color: var(--orange)"><i class="fa fa-calendar"></i> {{ news[news_id].date }}</div>
+							</div>
+							<hr class="my-2">
+							<div class="text-center my-3">
+								<img :src="news[news_id].img" width="80%" style="max-width: 600x" alt="">
+							</div>
+							<div class="content">{{ news[news_id].content }}</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="rank">
+				<div class="container">
+					<div class="text-center mb-5">
+						<div class="small">Hot Rank</div>
+						<h1>人氣排行</h1>
+					</div>
+					<div class="row justify-content-center flex-row-reverse align-items-center">
+						<div class="col-lg-6 my-3"><img src="images/chart.svg" alt=""></div>
+						<div class="col-lg-4 my-3 text-center">
+							<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="4000">
+							    <div class="carousel-inner" role="listbox">
+							        <div class="carousel-item active">
+										<div class="img m-auto" style="background-image: url('images/012.png'); width: 320px; height: 320px"></div>
+										<div class="p-2"><i class="fa fa-crown" style="color: gold"></i><br>First Place</div>
+										<h4>招牌黑糖口味</h4>
+										<div class="m-auto" style="width: 320px; height: 8px; background: gold"></div>
+						            </div>
+							        <div class="carousel-item">
+										<div class="img m-auto" style="background-image: url('images/015.png'); width: 320px; height: 320px"></div>
+										<div class="p-2"><i class="fa fa-crown" style="color: silver"></i><br>Second Place</div>
+										<h4>四川麻辣口味</h4>
+										<div class="m-auto" style="width: 320px; height: 8px; background: silver"></div>
+						            </div>
+							        <div class="carousel-item">
+										<div class="img m-auto" style="background-image: url('images/014.png'); width: 320px; height: 320px"></div>
+										<div class="p-2"><i class="fa fa-crown" style="color: darkgoldenrod"></i><br>Third Place</div>
+										<h4>木瓜牛奶口味</h4>
+										<div class="m-auto" style="width: 320px; height: 8px; background: darkgoldenrod"></div>
+						            </div>
+						        </div>
+							    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev"> <i class="fa fa-caret-left fa-3x text-warning" style="margin-top: 300px"></i> </a> <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next"> <i class="fa fa-caret-right fa-3x text-warning" style="margin-top: 300px"></i> </a> </div>
+                        </div>
+					</div>
+				</div>
+			</section>
+			<section id="shop">
+				<div class="w-100">
+					<div class="text-center mb-5">
+						<div class="small">Online Shop</div>
+						<h1>線上商店</h1>
+					</div>
+					<div class="d-lg-flex">
+						<div class="good" v-for="i, j in goods">
+							<div class="img" :class="j? '': 'active'" :style="`background-image: url(${i.img})`" data-target="#carouselExampleIndicators3" :data-slide-to="j">
+								<div class="label">{{ i.name }}</div>
+							</div>
+						</div>
+					</div>
+					<div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel" data-interval="0">
+						<div class="carousel-inner" role="listbox">
+							<div class="carousel-item" :class="j? '': 'active'" v-for="i, j in goods" style="padding: 0 10%">
+								<div class="row align-items-center">
+									<div class="col-lg-6">
+										<div class="img" style="padding-top: 80%; margin: 10%" :style="`background-image: url(${i.img})`"></div>
+									</div>
+									<div class="col-lg-6">
+										<div class="d-flex flex-column">
+											<div class="text-center d-lg-none">
+												<div class="font-weight-bold" style="font-size: calc(2rem + 1vw)">{{ i.name }}</div>
+												<h4 class="my-2">NT$ {{ i.cost }}</h4>
+											</div>
+											<div class="d-none d-lg-block">
+												<div class="font-weight-bold" style="font-size: calc(2rem + 1vw)">{{ i.name }}</div>
+												<h4 class="my-2">NT$ {{ i.cost }}</h4>
+											</div>
+											<p style="font-size: 1.2rem; line-height: 2em; text-align: justify; flex-basis: 100%">{{ i.content }}</p>
+											<div class="d-flex align-items-center justify-content-center">
+												<button class="btn btn-lg btn-outline-danger m-2" @click="cartMinus(j)"><i class="fa fa-minus"></i></button>
+												<h3 class="mb-0 text-center" style="width: 3em">{{ cart[j] }}</h4>
+												<button class="btn btn-lg btn-outline-danger m-2" @click="cartAdd(j)"><i class="fa fa-plus"></i></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev"> <i class="fa fa-caret-left text-waring fa-4x text-danger"></i> </a> <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next"> <i class="fa fa-caret-right text-waring fa-4x text-danger"></i> </a> </div>
+				</div>
+            </section>
+			<section id="contact">
+				<div class="container">
+					<div class="text-center mb-3">
+						<div class="small">Contact Us</div>
+						<h1>聯絡我們</h1>
+					</div>
+					<div class="p-2 text-center">
+						<a href="https://www.youtube.com" @click.prevent="alert('目前尚無網際網路，請稍後再試。')" class="d-inline-flex align-items-center text-dark text-decoration-none mx-3" style="gap: .5rem"><i class="fab fa-youtube" style="font-size: 1.2rem"></i> YouTube</a>
+						<a href="https://www.facebook.com" @click.prevent="alert('目前尚無網際網路，請稍後再試。')" class="d-inline-flex align-items-center text-dark text-decoration-none mx-3" style="gap: .5rem"><i class="fab fa-facebook" style="font-size: 1.2rem"></i> Facebook</a>
+						<a href="https://www.instagram.com" @click.prevent="alert('目前尚無網際網路，請稍後再試。')" class="d-inline-flex align-items-center text-dark text-decoration-none mx-3" style="gap: .5rem"><i class="fab fa-instagram" style="font-size: 1.2rem"></i> Instagram</a>
+					</div>
+					<form action="" @submit.prevent="alert('您已成功訂閱囉！')" class="d-block p-3 m-3 p-lg-5 mb-lg-5 shadow" style="background: linear-gradient(#fff5, #fff5), linear-gradient(#ffe9b6, #fbc67a, #f6cc5c)">
+						<div class="text-center mb-3">
+							<div class="small">Subscribe Us</div>
+							<h1>訂閱我們</h1>
+						</div>
+						<p style="font-size: 1.2rem; line-height: 2em; text-align: justify">　　訂閱「黑糖啵啵爆米花專賣店」吧！只要訂閱我們，每當我們有任何活動或最新消息時，我們就可以在第一時間通知您，讓您不再錯過有關我們的任何大小事！此外，我們還會在每個月的 3 號向您推送我們的「啵啵快報」，讓您能夠更加的了解我們。馬上訂閱我們吧！</p>
+						<input type="email" name="" id="" class="form-control form-control-lg mb-3" required autocomplete="off" placeholder="請輸入您的電子郵件：example@site.com">
+						<div class="text-right"><button class="btn btn-danger">訂閱</button></div>
+					</form>
+					<div class="row justify-content-center">
+						<div class="col-lg-3 m-3 text-center">
+							<i class="far fa-envelope fa-3x text-dark"></i>
+							<div class="mb-3"></div>
+							<a href="mailto:service@chaicoalpopcron.com.tw" class="text-dark">service@chaicoalpopcron.com.tw</a>
+						</div>
+						<div class="col-lg-3 m-3 text-center">
+							<i class="fa fa-phone-alt fa-3x text-dark"></i>
+							<div class="mb-3"></div>
+							<a href="tel:+886932145678" class="text-dark">0932 145 678</a>
+						</div>
+						<div class="col-lg-3 m-3 text-center">
+							<i class="far fa-building fa-3x text-dark"></i>
+							<div class="mb-3"></div>
+							<span class="text-dark">台中市中區公園路 38 號</span>
+						</div>
+					</div>
+				</div>
+				<div class="p-2 small text-center text-white bg-dark">本網站使用 JQuery、Vue 製作，並利用 Ajax 技術向 Apache、MySQl 伺服器溝通。本網站具 RWD 功能。　&copy; 2021 All Rights Reserve.</div>
+			</section>
+		</div>
+		<div id="alert" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header"><h5 class="mb-0">這個網站顯示</h5><button class="close" data-dismiss="modal">&times;</button></div>
+					<div class="modal-body">{{ alert_msg }}</div>
+					<div class="modal-footer"><button class="btn btn-primary" data-dismiss="modal">確定</button></div>
+				</div>
+			</div>
+		</div>
+		<div id="cart" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header"><h5 class="mb-0">我的商品</h5><button class="close" data-dismiss="modal">&times;</button></div>
+					<div class="modal-body">
+						<template v-if="sum(cart)">
+							<div class="d-flex align-items-center" style="gap: 1rem;" v-for="i, j in goods" v-if="cart[j]">
+								<img :src="i.img" width="100" class="p-2" alt="">
+								<div class="overflow-hidden" style="flex-basis: 100%">
+									<div class="d-flex align-items-center justify-content-between">
+										<div class="font-weight-bold overflow-hidden" style="white-space: nowrap; text-overflow: ellipsis; font-size: 1.2rem;">{{ i.name }}</div>
+										<div style="white-space: nowrap; color: var(--orange)">NT$ {{ i.cost }}</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>數量：{{ cart[j] }}<br>小計：NT$ {{ i.cost * cart[j] }}</div>
+										<button class="btn btn-danger" @click="cartRemove(j)">移除</button>
+									</div>
+								</div>
+							</div>
+							<hr class="my-2">
+							<div>運費：NT$ 0<br>總計：NT$ {{ total(cart) }}</div>
+						</template>
+						<div class="text-center" v-else>目前尚無任何商品哦！ <a href="#shop" @click="$('#cart').modal('hide')">立即下單</a></div>
+					</div>
+					<div class="modal-footer">
+						<template v-if="sum(cart)">
+							<button class="btn btn-success" @click="send">結帳</button>
+							<button class="btn btn-danger" @click="cartClear">清空</button>
+							<button class="btn btn-secondary" data-dismiss="modal">關閉</button>
+						</template>
+						<button class="btn btn-primary" v-else data-dismiss="modal">確定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="deal" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content" v-if="deal">
+					<div class="modal-header"><h5 class="mb-0">訂單編號：{{ deal.id }}</h5><button class="close" data-dismiss="modal">&times;</button></div>
+					<div class="modal-body">
+						<div class="d-flex align-items-center" style="gap: 1rem;" v-for="i, j in goods" v-if="deal.cart[j]">
+							<img :src="i.img" width="100" class="p-2" alt="">
+							<div class="overflow-hidden" style="flex-basis: 100%">
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="font-weight-bold overflow-hidden" style="white-space: nowrap; text-overflow: ellipsis; font-size: 1.2rem;">{{ i.name }}</div>
+									<div style="white-space: nowrap; color: var(--orange)">NT$ {{ i.cost }}</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<div>數量：{{ deal.cart[j] }}<br>小計：NT$ {{ i.cost * deal.cart[j] }}</div>
+								</div>
+							</div>
+						</div>
+						<hr class="my-2">
+						<div>運費：NT$ 0<br>總計：NT$ {{ total(deal.cart) }}</div>
+						請在三日內匯款至[ccpopcron2021]，並於備註欄中記註訂單編號、收貨地址、聯絡電話。若有任何問題請聯絡客服人員。
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" data-dismiss="modal">確定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="search" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header"><h5 class="mb-0">訂單查詢</h5><button class="close" data-dismiss="modal">&times;</button></div>
+					<div class="modal-body">
+						<form action="" @submit.prevent="get" class="input-group">
+							<input type="text" name="" id="id" class="form-control" autocomplete="off" placeholder="請輸入訂單編號">
+							<div class="input-group-append"><button class="btn btn-outline-danger">查詢</button></div>
+						</form>
+						<div class="mb-3"></div>
+						<template v-if="search.cart">
+							<div class="d-flex align-items-center" style="gap: 1rem;" v-for="i, j in goods" v-if="search.cart[j]">
+								<img :src="i.img" width="100" class="p-2" alt="">
+								<div class="overflow-hidden" style="flex-basis: 100%">
+									<div class="d-flex align-items-center justify-content-between">
+										<div class="font-weight-bold overflow-hidden" style="white-space: nowrap; text-overflow: ellipsis; font-size: 1.2rem;">{{ i.name }}</div>
+										<div style="white-space: nowrap; color: var(--orange)">NT$ {{ i.cost }}</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>數量：{{ search.cart[j] }}<br>小計：NT$ {{ i.cost * search.cart[j] }}</div>
+									</div>
+								</div>
+							</div>
+							<hr class="my-2">
+							<div>運費：NT$ 0<br>總計：NT$ {{ total(search.cart) }}</div>
+						</template>
+						<div class="text-center" v-else-if="search.id">查無此訂單</div>
+						<div class="text-center" v-else>請輸入訂單編號</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" data-dismiss="modal">關閉</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tools" class="shadow">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+			<a href="#search" @click.prevent="$('#search').modal()"><i class="fa fa-search"></i></a>
+			<a href="#robot" @click.prevent="$('#robot').fadeToggle()"><i class="fa fa-robot"></i></a>
+		</div>
+		<div id="robot" class="card" v-show="0">
+			<div class="card-header">智能啵啵</div>
+			<div class="card-body">
+				<div class="content">
+					<div class="msg">您好，我是智能啵啵。有什麼需要幫忙的嗎？</div>
+					<div class="w-100" style="display: grid; grid-template: 1fr 1fr / 1fr 1fr; gap: .5rem">
+						<button class="btn btn-outline-warning btn-sm" @click="$('#text').val('查看消息'); robotSend()">查看消息</button>
+						<button class="btn btn-outline-warning btn-sm" @click="$('#text').val('前往購物'); robotSend()">前往購物</button>
+						<button class="btn btn-outline-warning btn-sm" @click="$('#text').val('聯絡我們'); robotSend()">聯絡我們</button>
+						<button class="btn btn-outline-warning btn-sm" @click="$('#text').val('查詢訂單'); robotSend()">查詢訂單</button>
+					</div>
+					<div class="msg">可直接點選或在下方輸入哦！</div>
+					<div class="msg" :class="i[0]? 'guest': 'robot'" v-for="i in robot">{{ i[1] }}</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<form action="" @submit.prevent="robotSend" class="input-group">
+					<input type="text" name="" id="text" class="form-control" autocomplete="off" placeholder="Aa" list="list">
+					<div class="input-group-append"><button class="btn btn-danger"><i class="fa fa-paper-plane"></i></button></div>
+				</form>
+				<datalist id="list">
+					<option>查看消息</option>
+					<option>前往購物</option>
+					<option>聯絡我們</option>
+					<option>查詢訂單</option>
+				</datalist>
+			</div>
+		</div>
+    </div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+    <script src="js/jquery-3.4.1.min.js"></script> 
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script src="js/popper.min.js"></script> 
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
