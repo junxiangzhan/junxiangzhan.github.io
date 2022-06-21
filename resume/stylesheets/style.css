@@ -1,6 +1,7 @@
 :root {
     font-size: 12pt;
     color: rgb( 37, 36, 35 );
+    font-family: 'Segoe UI', '微軟正黑體', sans-serif;
 }
 
 *, ::before, ::after {
@@ -9,19 +10,17 @@
 }
 
 body {
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 1.5rem;
     max-width: 1120px;
-    width: calc(100% - 4rem);
+    width: calc(100% - 2rem);
     box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
-    
-    margin: 0 auto;
-    max-width: unset;
-    width: 21cm;
-    box-shadow: none;
 }
 @media print {
     body {
+        margin: 0 auto;
+        max-width: unset;
+        width: 21cm;
         box-shadow: none;
         padding: 0;
     }
@@ -30,9 +29,15 @@ body {
 section {
     padding-bottom: 2rem;
     page-break-inside: avoid;
-}
-section:not(:last-of-type) {
     border-bottom: 1px solid rgb( 210, 208, 206 );
+}
+section:last-of-type {
+    border-bottom: 0;
+}
+@media print {
+    section.last-of-page {
+        border-bottom: 0;
+    }
 }
 
 h1, h2, h3 {
@@ -58,14 +63,6 @@ h1 span:last-child {
     line-height: 1em;
     justify-self: flex-end;
     text-align: end;
-}
-@media print {
-    h1 span:last-child {
-        font-size: 1.75em;
-        bottom: 0;
-        color: rgb( 210, 208, 206 );
-        opacity: .5;
-    }
 }
 
 h2 {
@@ -95,7 +92,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
 }
-.row * {
+.row > * {
     flex-grow: 1;
 }
 
@@ -103,6 +100,7 @@ ul {
     border-radius: 50%;
     width: calc(100% - 3rem);
     max-width: 300px;
+    box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
 }
 
 small {
@@ -112,6 +110,7 @@ small {
 
 li {
     padding: .25em;
+    line-height: 1.25em;
 }
 
 .timeline {
@@ -139,7 +138,7 @@ li {
     position: absolute;
     width: .5em;
     height: .5em;
-    top: calc(.5ex + 1em);
+    top: 1.125em;
     left: -1em;
     transform: translate(-50%, -50%);
     background-color: rgb( 121, 119, 117 );
@@ -168,4 +167,11 @@ a:active {
     width: 1.5em;
     height: 1em;
     text-decoration: inherit;
+}
+
+.info {
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    margin: .5rem 0;
 }
